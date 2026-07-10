@@ -1,27 +1,80 @@
 # Teen-spend-ai
-AI-powered system that analyzes teenage spending patterns to predict impulsive spending behavior and provide personalized financial habit recommendations.
 
-AI Finance Project – Teen Spending & Impulse Predictor
+# SpendSense AI
 
-Project Overview
+An AI powered financial assistant that helps teenagers understand their spending habits and make smarter financial decisions.**
 
-This project is designed to understand and predict impulsive spending behaviour in teenagers using data patterns and AI-based analysis. The goal is to help users become more aware of their financial decisions and improve budgeting habits over time.
+Overview
 
-Problem Statement
+SpendSense AI is a web application that uses AI and Machine Learning to analyze a user's financial habits and identify spending behaviour patterns. By evaluating information such as income, expenses, savings, and spending categories, the platform provides personalized insights and recommendations to encourage better money management.
 
-Teenagers often make impulsive purchases without fully understanding long-term financial impact. Existing budgeting tools only track spending but do not predict or prevent impulsive behaviour.
+The goal of SpendSense AI is to make financial education simple, accessible, and engaging for teenagers and young adults.
 
-Solution
+Features
 
-This project explores a predictive system that identifies spending patterns and potential impulsive decisions using behavioural signals and user data.
+Secure user authentication like sign Up, Login, and Logout
+Personal user profiles
+Income, expense, and savings tracking
+Interactive financial dashboard
+AI powered spending behaviour analysis
+Spending insights and visualizations
+Personalized financial recommendations
+AI financial assistant chatbot
+Spending history and progress tracking
+Responsive design for desktop and mobile devices
+Modern, user-friendly interface
 
-Repository Structure
+AI & Machine Learning
 
-* /code → Notebooks, scripts, and AI models
-* /docs → Research paper, pitch deck, and documentation
-* /data → Dataset references (no large files stored here)
-* /results → Graphs, screenshots, and model outputs
+SpendSense AI uses Machine Learning to analyze financial patterns and classify spending behaviour.
 
-Status
+AI Workflow
 
-This project is currently in development as part of a learning fellowship. The repository will be continuously updated.
+1. Users enter financial information.
+2. The AI analyzes spending and financial patterns.
+3. The model identifies spending behaviour.
+4. Personalized recommendations are generated.
+
+AI Model
+
+SpendSense AI Spending Behaviour Prediction Model
+
+Machine Learning Algorithm
+
+Random Forest Classifier
+
+AI Inputs
+
+Monthly income
+Monthly expenses
+Savings
+Debt
+Spending categories
+Financial ratios
+
+AI Outputs
+
+Spending behaviour classification
+Financial insights
+Personalized recommendations
+
+Datasets
+
+This project uses publicly available datasets from kaggle for educational and research reasons.
+
+Datasets include
+
+Student Spending Dataset
+Personal Finance Dataset
+
+These datasets are used to look at spending behaviour patterns and support the development of the AI model.
+
+
+Project Goal
+
+To build an AI powered financial assistant that helps teenagers
+
+Understand their spending habits
+Improve money management skills
+Build healthier financial behaviours
+Make smarter financial decisions
