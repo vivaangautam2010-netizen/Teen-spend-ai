@@ -2,7 +2,7 @@
 
 # SpendSense AI
 
-An AI powered financial assistant that helps teenagers understand their spending habits and make smarter financial decisions.**
+An AI powered financial assistant that helps teenagers understand their spending habits and make smarter financial decisions.
 
 Overview
 
