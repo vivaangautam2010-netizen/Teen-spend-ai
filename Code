@@ -661,7 +661,10 @@
 
     <!-- SPENDING FORM -->
     <div class="tab-panel" id="tab-form">
-      <div class="app-head"><div><h1>Spending analysis</h1><p>Enter this month's numbers as accurately as you can.</p></div></div>
+      <div class="app-head">
+        <div><h1>Spending analysis</h1><p>Enter this month's numbers as accurately as you can.</p></div>
+        <button class="btn" onclick="loadSampleBob()" title="Fill in a sample profile to see how the app works">👤 Try a sample: Bob</button>
+      </div>
       <div class="form-with-calc">
         <div class="form-shell">
           <form id="spend-form" onsubmit="return handleAnalyze(event)">
@@ -1193,6 +1196,22 @@ function updateSavingsPreview(){
   }
 }
 
+/* ---------------- sample demo profile ("Bob") ----------------
+   Fills the spending form with a realistic sample profile and runs
+   the analysis automatically — a quick way to demo the app to
+   someone without needing real numbers on hand. */
+function loadSampleBob(){
+  const sample = {
+    age: 17, income: 250,
+    food: 60, transport: 20, entertainment: 45, shopping: 50,
+    tech: 25, personal: 10, health: 10, other: 15,
+  };
+  document.getElementById('f-age').value = sample.age;
+  document.getElementById('f-income').value = sample.income;
+  CATS.forEach(c => { document.getElementById('f-' + c.key).value = sample[c.key]; });
+  updateSavingsPreview();
+}
+
 /* ---------------- dashboard ---------------- */
 function renderDashboard(){
   const user = getUser();
@@ -1489,11 +1508,18 @@ function buildSystemPrompt(){
   return ctx;
 }
 
+/* Set this to your deployed backend's URL (see the backend proxy README)
+   once you've deployed it, e.g. 'https://spendsense-backend.onrender.com'.
+   Leave it empty ('') to use the direct connection that only works while
+   this file is running inside Claude.ai's own preview. */
+const AI_BACKEND_URL = '';
+
 async function getAIReply(userText){
   chatApiHistory.push({role: 'user', content: userText});
   if(chatApiHistory.length > 12) chatApiHistory = chatApiHistory.slice(-12);
   try{
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
+    const endpoint = AI_BACKEND_URL ? `${AI_BACKEND_URL.replace(/\/$/, '')}/api/chat` : "https://api.anthropic.com/v1/messages";
+    const response = await fetch(endpoint, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({
